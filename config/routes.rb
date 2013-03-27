@@ -1,4 +1,8 @@
 HaimsRails::Application.routes.draw do
+  get "device/index"
+
+  get "device/show"
+
   # devise
   devise_for :users
 
@@ -10,5 +14,10 @@ HaimsRails::Application.routes.draw do
   namespace :management do
     # マイコンボード
     resources :board, :defaults => { :format => 'html' }
+    # 制御対象機器一覧
+    resources :device, :defaults => { :format => 'html' }, :except => [:edit, :update] do
+      # 赤外線リモコンの信号
+      resources :ir_signal, :defaults => { :format => 'html' }, :except => [:edit, :update]
+    end
   end
 end
