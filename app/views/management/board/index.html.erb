@@ -1,0 +1,14 @@
+<legend>マイコンボード一覧</legend>
+
+<table class="table">
+  <tr>
+    <th>名前</th>
+    <th>シリアルポート</th>
+  </tr>
+  <tr>
+    <% @boards.each do |i| %>
+      <td><%= link_to i.name, edit_management_board_path(:id => i.id) %></td>
+      <td><%= i.serial_port %></td>
+    <% end %>
+  </tr>
+</table>

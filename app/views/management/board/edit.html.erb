@@ -1,0 +1,21 @@
+<legend>編集</legend>
+
+<%= form_for @board, :html => {:class => "form-horizontal"} do |f| %>
+  <div class="control-group">
+    <label class="control-label">名前</label>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">シリアルポート</label>
+    <div class="controls">
+      <%= f.text_field :serial_port %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "更新", :class => "btn btn-primary" %>
+  </div>
+<% end %>
