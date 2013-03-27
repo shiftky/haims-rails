@@ -5,6 +5,8 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 gem 'devise'
 gem 'jquery-rails'
+gem 'therubyracer'
+gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'serialport'
 
