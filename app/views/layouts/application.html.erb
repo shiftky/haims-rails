@@ -47,9 +47,13 @@
           <a class="brand" href="#">HaimsRails</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "リモートコントロール" %></li>
+                <li><%= link_to "管理ページ" %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, :method => :delete  %></li>
+              <% else %>
+                <li><%= link_to "ログイン", new_user_session_path %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
