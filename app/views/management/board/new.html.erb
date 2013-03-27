@@ -1,6 +1,6 @@
-<legend>編集</legend>
+<legend>新規登録</legend>
 
-<%= form_for @board, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @board, :url => management_board_index_path, :class => "form-horizontal" do |f| %>
   <div class="control-group">
     <label class="control-label">名前</label>
     <div class="controls">
@@ -16,8 +16,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit "更新", :class => "btn btn-primary" %>
+    <%= f.submit "登録", :class => "btn btn-primary" %>
     <%= link_to "キャンセル", management_board_index_path, :class => "btn" %>
-    <%= link_to "削除", management_board_path, :method => :delete, :confirm => "本当に削除しますか？", :class => "btn btn-danger", :style => "float: right;" %>
   </div>
 <% end %>

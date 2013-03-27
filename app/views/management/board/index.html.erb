@@ -1,14 +1,15 @@
 <legend>マイコンボード一覧</legend>
 
+<%= link_to "新規登録", new_management_board_path, :class => "btn" %>
 <table class="table">
   <tr>
     <th>名前</th>
     <th>シリアルポート</th>
   </tr>
-  <tr>
-    <% @boards.each do |i| %>
+  <% @boards.each do |i| %>
+    <tr>
       <td><%= link_to i.name, edit_management_board_path(:id => i.id) %></td>
       <td><%= i.serial_port %></td>
-    <% end %>
-  </tr>
+    </tr>
+  <% end %>
 </table>

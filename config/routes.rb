@@ -8,7 +8,7 @@ HaimsRails::Application.routes.draw do
   # 管理ページ
   resources :management, :defaults => { :format => 'html' }, :only => [:index]
   namespace :management do
-  # マイコンボード
-  resources :board, :defaults => { :format => 'html' }
+    # マイコンボード
+    resources :board, :defaults => { :format => 'html' }
   end
 end
