@@ -48,7 +48,7 @@
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <% if user_signed_in? %>
-                <li><%= link_to "リモートコントロール" %></li>
+                <li><%= link_to "リモートコントロール", remote_index_path %></li>
                 <li><%= link_to "管理ページ", management_index_path %></li>
                 <li><%= link_to "ログアウト", destroy_user_session_path, :method => :delete  %></li>
               <% else %>

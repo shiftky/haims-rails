@@ -1,15 +1,12 @@
 HaimsRails::Application.routes.draw do
-  get "ir_signal/new"
-
-  get "device/index"
-
-  get "device/show"
-
   # devise
   devise_for :users
 
   # root
   root :to => 'home#index'
+
+  # リモートコントロール
+  resources :remote, :defaults => { :format => 'html' }, :only => [:index]
 
   # 管理ページ
   resources :management, :defaults => { :format => 'html' }, :only => [:index]
