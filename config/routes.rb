@@ -6,7 +6,11 @@ HaimsRails::Application.routes.draw do
   root :to => 'home#index'
 
   # リモートコントロール
-  resources :remote, :defaults => { :format => 'html' }, :only => [:index]
+  resources :remote, :defaults => { :format => 'html' }, :only => [:index] do
+    member do
+      get :ir_send
+    end
+  end
 
   # 管理ページ
   resources :management, :defaults => { :format => 'html' }, :only => [:index]
