@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  id: 1
+  name: エアコン
+  description: リビングのエアコン
 
 two:
-  name: MyString
+  id: 2
+  name: 照明
