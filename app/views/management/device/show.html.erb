@@ -10,13 +10,15 @@
     <tr>
       <th>名前</th>
       <th>データ</th>
+      <th>登録日時</th>
       <th></th>
     </tr>
 
     <% @device.ir_signal.each do |i| %>
       <tr>
         <td><%= i.name %></td>
-        <td><%= i.data %></td>
+        <td><%= i.data.length > 50 ? i.data[0, 50] + "..." : i.data %></td>
+        <td><%= i.created_at %></td>
         <td>
           <%= link_to "削除", management_device_ir_signal_path(:device_id => @device.id, :id => i.id), :method => :delete, :confirm => "本当に削除しますか？", :class => "btn btn-danger", :style => "float: right;" %>
         </td>
