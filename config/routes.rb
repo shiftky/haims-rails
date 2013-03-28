@@ -8,7 +8,7 @@ HaimsRails::Application.routes.draw do
   # リモートコントロール
   resources :remote, :defaults => { :format => 'html' }, :only => [:index] do
     member do
-      get :ir_send
+      post :ir_send
     end
   end
 

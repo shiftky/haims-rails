@@ -1,12 +1,14 @@
 <legend>リモートコントロール</legend>
 
-<div>
+<div class="remote">
   <% @devices.each do |i| %>
     <h4><%= link_to i.name, "#" %></h4>
-    <div>
+    <table>
+      <tr>
       <% i.ir_signal.each do |s| %>
-        <%= link_to s.name, ir_send_remote_path(:id => s.id), :class => "btn" %>
+        <td><%= button_to s.name, ir_send_remote_path(:id => s.id), :class => "btn send" %></td>
       <% end %>
-    </div>
+      </tr>
+    </table>
   <% end %>
 </div>
