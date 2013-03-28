@@ -1,21 +1,28 @@
 <legend><%= @device.name %></legend>
 <p><%= @device.description %></p>
 
+<br / >
+
 <h4>登録済みリモコン信号</h4>
+<%= link_to "新規登録", new_management_device_ir_signal_path(:device_id => @device.id), :class => "btn" %>
 <table class="table">
   <tr>
     <th>名前</th>
     <th>データ</th>
+    <th></th>
   </tr>
 
   <% @device.ir_signal.each do |i| %>
     <tr>
       <td><%= i.name %></td>
       <td><%= i.data %></td>
+      <td>
+        <%= link_to "削除", management_device_ir_signal_path(:device_id => @device.id, :id => i.id), :method => :delete, :confirm => "本当に削除しますか？", :class => "btn btn-danger", :style => "float: right;" %>
+      </td>
     </tr>
   <% end %>
 </table>
 
 <div class="form-actions">
-  <%= link_to "削除", management_device_path(:id => @device.id), :method => :delete, :confirm => "本当に削除しますか？", :class => "btn btn-danger", :style => "float: right;" %>
+  <%= link_to "削除", management_device_path(:id => @device.id), :method => :delete, :confirm => "本当に削除しますか？", :class => "btn btn-danger" %>
 </div>

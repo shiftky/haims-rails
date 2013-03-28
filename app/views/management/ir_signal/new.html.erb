@@ -1,0 +1,24 @@
+<legend>リモコン信号の新規登録</legend>
+
+<%= form_for @ir_signal, :url => management_device_ir_signal_index_path, :html => {:class => "form-horizontal"} do |f| %>
+  <%= f.hidden_field :device_id, :value => params[:device_id] %>
+
+  <div class="control-group">
+    <label class="control-label">名前</label>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">送信データ</label>
+    <div class="controls">
+      <%= f.text_field :data %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "更新", :class => "btn btn-primary" %>
+    <%= link_to "キャンセル", management_device_path(:id => params[:device_id]), :class => "btn" %>
+  </div>
+<% end %>

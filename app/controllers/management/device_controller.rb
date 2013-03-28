@@ -25,6 +25,6 @@ class Management::DeviceController < ApplicationController
 
   def destroy
     Device.find(params[:id]).destroy
-    redirect_to management_device_index_path, :notice => "削除しました"
+    redirect_to management_device_index_path(:id => params[:device_id]), :notice => "削除しました"
   end
 end
