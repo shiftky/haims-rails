@@ -1,13 +1,15 @@
-<legend>制御対象機器一覧</legend>
+<legend>リモートコントロール対象機器一覧</legend>
 
 <%= link_to "新規登録", new_management_device_path, :class => "btn" %>
 <table class="table">
   <tr>
     <th>名前</th>
+    <th>説明</th>
   </tr>
   <% @devices.each do |i| %>
     <tr>
-      <td><%= link_to i.name %></td>
+      <td><%= link_to i.name, management_device_path(:id => i.id) %></td>
+      <td><%= i.description %></td>
     </tr>
   <% end %>
 </table>

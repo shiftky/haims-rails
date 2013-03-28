@@ -6,7 +6,7 @@ class Management::DeviceController < ApplicationController
   end
 
   def show
-    @device = Device.find(params[:id])
+    @device = Device.includes(:ir_signal).find(params[:id])
   end
 
   def new
@@ -24,7 +24,7 @@ class Management::DeviceController < ApplicationController
   end
 
   def destroy
-    Board.find(params[:id]).destroy
+    Device.find(params[:id]).destroy
     redirect_to management_device_index_path, :notice => "削除しました"
   end
 end

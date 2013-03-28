@@ -1,2 +1,21 @@
-<h1>Management::Device#show</h1>
-<p>Find me in app/views/management/device/show.html.erb</p>
+<legend><%= @device.name %></legend>
+<p><%= @device.description %></p>
+
+<h4>登録済みリモコン信号</h4>
+<table class="table">
+  <tr>
+    <th>名前</th>
+    <th>データ</th>
+  </tr>
+
+  <% @device.ir_signal.each do |i| %>
+    <tr>
+      <td><%= i.name %></td>
+      <td><%= i.data %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="form-actions">
+  <%= link_to "削除", management_device_path(:id => @device.id), :method => :delete, :confirm => "本当に削除しますか？", :class => "btn btn-danger", :style => "float: right;" %>
+</div>
