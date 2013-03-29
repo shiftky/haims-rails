@@ -2,6 +2,7 @@
 
 <div class="remote">
   <% @devices.each do |i| %>
+    <% if i.ir_signal.count != 0 %>
     <h4><%= link_to i.name, "#" %></h4>
     <table>
       <tr>
@@ -10,5 +11,6 @@
       <% end %>
       </tr>
     </table>
+    <% end %>
   <% end %>
 </div>
